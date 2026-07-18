@@ -18,7 +18,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" })
 
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
+  title: "Rhuan_aab.dev",
   description: site.bio,
 }
 

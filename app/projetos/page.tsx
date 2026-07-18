@@ -4,7 +4,7 @@ import { ProjectsList } from "@/components/projects-list"
 import { site } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: `Projetos — ${site.name}`,
+  title: "Rhuan_aab.dev",
   description: "Projetos e criações de Rhuan Andrey — mobile, fullstack e IoT.",
 }
 
