@@ -9,7 +9,7 @@ export const site = {
   email: "rhuandrey@gmail.com",
   github: "https://github.com/Rhuan-aa",
   linkedin: "https://www.linkedin.com/in/rhuan-aa-boni/",
-  bio: "Estudante do sexto período de Bacharelado em Engenharia de Software no Instituto Federal de São Paulo (IFSP), com experiência em aplicações fullstack e mobile e background de iniciação científica. Escrevo código guiado por testes automatizados e padrões de design, com interesse especial em sistemas em tempo real — de WebSockets, IoT com MQTT ou comunicação via bluetooth.",
+  bio: "Estudante do sexto período de Bacharelado em Engenharia de Software no Instituto Federal de São Paulo (IFSP), com experiência em aplicações fullstack e mobile e background de iniciação científica. Escrevo código guiado por testes automatizados e padrões de design, com maior experiência em sistemas com comunicação assíncrona, IoT e arquiteturas offline-first.",
   skills: [
     "Java",
     "Spring Boot",
