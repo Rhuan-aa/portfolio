@@ -24,13 +24,13 @@ export const experiences: Experience[] = [
       {
         title: "App Offline-First",
         description:
-          "Aplicativo móvel offline-first com Clean Architecture, comunicação Bluetooth (GATT/BLE e Serial com Arduino), pareamento via QR Code, autenticação offline, geolocalização em tempo real e mapas vetorizados com Planetiler.",
+          "Aplicativo móvel offline-first com Clean Architecture, projetado para operar totalmente sem internet. A arquitetura nasceu de uma restrição de hardware: os Arduinos em campo armazenam apenas pequenas quantidades de dados, atuando como buffer temporário durante o curto período de transição entre dispositivos — cabe ao app coletar essas leituras via Bluetooth (GATT/BLE e Serial) e persisti-las localmente antes que sejam sobrescritas. Conta ainda com pareamento via QR Code, autenticação offline, geolocalização em tempo real e mapas vetorizados com Planetiler.",
         tech: ["Flutter", "Dart", "BLE", "Clean Architecture"],
       },
       {
         title: "Dashboard IoT",
         description:
-          "Dashboard de monitoramento offline-first em rede interna, com transmissão de dados e imagens em tempo real via MQTT e controle bidirecional de hardware (acionamento de catracas físicas pelo painel).",
+          "Dashboard de monitoramento offline-first construído em Node-RED com FlowFuse Dashboard 2.0, projetado para alta disponibilidade e operando de forma isolada na rede interna do local. A transmissão de dados e imagens em tempo real é estruturada sobre MQTT, garantindo atualização contínua e instantânea das métricas na interface. Fluxos lógicos de automação viabilizam o controle bidirecional de hardware, permitindo gerenciar e acionar catracas físicas em tempo real diretamente pelo painel.",
         tech: ["Node-RED", "MQTT", "IoT"],
       },
     ],
