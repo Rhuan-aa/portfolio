@@ -9,7 +9,7 @@ export const site = {
   email: "rhuandrey@gmail.com",
   github: "https://github.com/Rhuan-aa",
   linkedin: "https://www.linkedin.com/in/rhuan-aa-boni/",
-  bio: "Engenheiro de Software com 3 anos de experiência em aplicações web e mobile e background de iniciação científica. Especialista em otimização de desempenho, resolução de problemas e design de software — código limpo, escalável e orientado a resultados.",
+  bio: "Estudante do sexto período de Bacharelado em Engenharia de Software no Instituto Federal de São Paulo (IFSP), com experiência em aplicações fullstack e mobile e background de iniciação científica. Escrevo código guiado por testes automatizados e padrões de design, com interesse especial em sistemas em tempo real — de WebSockets, IoT com MQTT ou comunicação via bluetooth.",
   skills: [
     "Java",
     "Spring Boot",
