@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "CTruco",
     category: "Fullstack / Educacional",
     description:
-      "Plataforma educacional para ensino de programação através de um jogo de Truco. Multiplayer assíncrono via WebSockets, validação rigorosa de cadastros (MX Records, Regex), coleta de dataset para IA e deploy com Docker.",
+      "Plataforma educacional para ensino de programação orientada a objetos através de um jogo de Truco. Onde minha responsabilidade fora o desenvolvimento do módulo Multiplayer assíncrono via WebSockets, validação rigorosa de cadastros para novos jogadores (MX Records, Regex), coleta de dataset para futuro aprendizado de maquina e conteinarização para deploy com Docker, por fim tendo responsabilidade de adicionar os testes automatizados restantes.",
     tech: ["Java", "Spring Boot", "React", "WebSockets", "Docker"],
     year: "2025",
     links: [
