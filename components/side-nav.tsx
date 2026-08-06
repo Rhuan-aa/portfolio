@@ -1,17 +1,27 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { cn } from "@/lib/utils"
+import { cn, type Lang } from "@/lib/utils"
 
-const navItems = [
-  { id: "hero", label: "Início" },
-  { id: "sobre", label: "Sobre" },
-  { id: "experiencia", label: "Experiência" },
-  { id: "projetos", label: "Projetos" },
-  { id: "contato", label: "Contato" },
-]
+const NAV_ITEMS: Record<Lang, { id: string; label: string }[]> = {
+  pt: [
+    { id: "hero", label: "Início" },
+    { id: "sobre", label: "Sobre" },
+    { id: "experiencia", label: "Experiência" },
+    { id: "projetos", label: "Projetos" },
+    { id: "contato", label: "Contato" },
+  ],
+  en: [
+    { id: "hero", label: "Home" },
+    { id: "sobre", label: "About" },
+    { id: "experiencia", label: "Experience" },
+    { id: "projetos", label: "Projects" },
+    { id: "contato", label: "Contact" },
+  ],
+}
 
-export function SideNav() {
+export function SideNav({ lang = "pt" }: { lang?: Lang }) {
+  const navItems = NAV_ITEMS[lang]
   const [activeSection, setActiveSection] = useState("hero")
 
   useEffect(() => {

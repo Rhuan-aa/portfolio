@@ -2,9 +2,10 @@
 
 import { useRef, useEffect } from "react"
 import { projects } from "@/lib/projects"
+import { tx, type Lang } from "@/lib/utils"
 import gsap from "gsap"
 
-export function ProjectsList() {
+export function ProjectsList({ lang = "pt" }: { lang?: Lang }) {
   const listRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -46,12 +47,12 @@ export function ProjectsList() {
           </div>
 
           <p className="mt-4 md:ml-16 max-w-2xl font-mono text-xs md:text-sm text-muted-foreground leading-relaxed">
-            {project.description}
+            {tx(lang, project.description, project.descriptionEn)}
           </p>
 
           <ul className="mt-5 md:ml-16 flex flex-wrap gap-2">
             <li className="border border-accent/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent">
-              {project.category}
+              {tx(lang, project.category, project.categoryEn)}
             </li>
             {project.tech.map((tech) => (
               <li

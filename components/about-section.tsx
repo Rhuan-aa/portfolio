@@ -2,12 +2,31 @@
 
 import { useRef, useEffect } from "react"
 import { site } from "@/lib/site"
+import { tx, type Lang } from "@/lib/utils"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function AboutSection() {
+const COPY = {
+  pt: {
+    eyebrow: "01 / Sobre",
+    heading: "QUEM SOU",
+    stackHeading: "Stack & Competências",
+    paragraph:
+      "Atualmente curso Engenharia de Software no IFSP — Campus São Carlos e trabalho como Engenheiro de Software na Newgesti, com foco em desenvolvimento mobile (Flutter/Dart) e soluções fullstack & IoT.",
+  },
+  en: {
+    eyebrow: "01 / About",
+    heading: "WHO I AM",
+    stackHeading: "Stack & Skills",
+    paragraph:
+      "I'm currently studying Software Engineering at IFSP — São Carlos campus and work as a Software Engineer at Newgesti, focused on mobile development (Flutter/Dart) and fullstack & IoT solutions.",
+  },
+}
+
+export function AboutSection({ lang = "pt" }: { lang?: Lang }) {
+  const c = COPY[lang]
   const sectionRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
@@ -59,22 +78,21 @@ export function AboutSection() {
   return (
     <section ref={sectionRef} id="sobre" className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12">
       <div ref={headerRef} className="mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">01 / Sobre</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">QUEM SOU</h2>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">{c.eyebrow}</span>
+        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">{c.heading}</h2>
       </div>
 
       <div ref={contentRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
         <div>
-          <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">{site.bio}</p>
-          <p className="mt-6 font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">
-            Atualmente curso Engenharia de Software no IFSP — Campus São Carlos e trabalho como Engenheiro de
-            Software na Newgesti, com foco em desenvolvimento mobile (Flutter/Dart) e soluções fullstack &amp; IoT.
+          <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">
+            {tx(lang, site.bio, site.bioEn)}
           </p>
+          <p className="mt-6 font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">{c.paragraph}</p>
         </div>
 
         <div>
           <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">
-            Stack &amp; Competências
+            {c.stackHeading}
           </h3>
           <ul className="flex flex-wrap gap-3">
             {site.skills.map((skill) => (

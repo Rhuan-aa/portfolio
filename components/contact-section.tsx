@@ -2,12 +2,19 @@
 
 import { useRef, useEffect } from "react"
 import { site } from "@/lib/site"
+import { tx, type Lang } from "@/lib/utils"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function ContactSection() {
+const COPY = {
+  pt: { eyebrow: "04 / Contato", heading: "VAMOS CONVERSAR", email: "E-mail", links: "Redes", location: "Local" },
+  en: { eyebrow: "04 / Contact", heading: "LET'S TALK", email: "Email", links: "Links", location: "Location" },
+}
+
+export function ContactSection({ lang = "pt" }: { lang?: Lang }) {
+  const c = COPY[lang]
   const sectionRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
@@ -72,13 +79,13 @@ export function ContactSection() {
       className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12 border-t border-border/30"
     >
       <div ref={headerRef} className="mb-16">
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">04 / Contato</span>
-        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">VAMOS CONVERSAR</h2>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">{c.eyebrow}</span>
+        <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">{c.heading}</h2>
       </div>
 
       <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">E-mail</h4>
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">{c.email}</h4>
           <a
             href={`mailto:${site.email}`}
             className="font-mono text-xs text-foreground/80 hover:text-accent transition-colors duration-200 break-all"
@@ -88,7 +95,7 @@ export function ContactSection() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Redes</h4>
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">{c.links}</h4>
           <ul className="space-y-2">
             <li>
               <a
@@ -114,9 +121,9 @@ export function ContactSection() {
         </div>
 
         <div className="col-span-1">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Local</h4>
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.3em] text-muted-foreground mb-4">{c.location}</h4>
           <ul className="space-y-2">
-            <li className="font-mono text-xs text-foreground/80">{site.location}</li>
+            <li className="font-mono text-xs text-foreground/80">{tx(lang, site.location, site.locationEn)}</li>
           </ul>
         </div>
 

@@ -41,8 +41,11 @@ export const projects: Project[] = [
   {
     title: "CTruco",
     category: "Fullstack / Educacional",
+    categoryEn: "Fullstack / Educational",
     description:
       "Plataforma educacional para ensino de programação orientada a objetos através de um jogo de Truco. Onde minha responsabilidade fora o desenvolvimento do módulo Multiplayer assíncrono via WebSockets, validação rigorosa de cadastros para novos jogadores (MX Records, Regex), coleta de dataset para futuro aprendizado de maquina e conteinarização para deploy com Docker, por fim tendo responsabilidade de adicionar os testes automatizados restantes.",
+    descriptionEn:
+      "Educational platform for teaching object-oriented programming through a card game (Truco). My responsibility was the asynchronous Multiplayer module over WebSockets, strict validation for new player registrations (MX Records, Regex), dataset collection for future machine learning, and containerization for deployment with Docker — finishing with the addition of the remaining automated tests.",
     tech: ["Java", "Spring Boot", "React", "WebSockets", "Docker"],
     year: "2025",
     links: [
@@ -57,6 +60,8 @@ export const projects: Project[] = [
     category: "Fullstack / Web",
     description:
       "Sistema web full-stack para gerenciamento de NPCs em campanhas de RPG de mesa, com sincronização em tempo real entre Mestre e jogadores. O projeto resolve um problema prático das mesas de RPG: organizar quais jogadores interagem com quais NPCs ao longo do tempo de jogo. O Mestre cria campanhas, monta um acervo reutilizável de NPCs com ficha completa (atributos, traços, conhecimentos e retrato) e controla o que fica visível para os jogadores. O tempo de jogo é organizado em 'TimeSkips' com slots diários de interação, onde os jogadores agendam ações com NPCs ou ações solo (treino, estudo ou atividades customizadas criadas pelo Mestre), com regras de custo em que ações mais longas ocupam múltiplos slots consecutivos. Toda a grade de agendamento é sincronizada em tempo real via WebSocket — o que um jogador agenda aparece instantaneamente para os demais — e um feed de logs narrativos registra a história da campanha.",
+    descriptionEn:
+      "Full-stack web system for managing NPCs in tabletop RPG campaigns, with real-time sync between Game Master and players. The project solves a practical problem at RPG tables: organizing which players interact with which NPCs over the course of play. The Game Master creates campaigns, builds a reusable NPC roster with full character sheets (attributes, traits, knowledge and portrait), and controls what's visible to players. Play time is organized into 'TimeSkips' with daily interaction slots, where players schedule actions with NPCs or solo actions (training, studying, or custom activities created by the GM), with cost rules where longer actions occupy multiple consecutive slots. The entire schedule grid syncs in real time via WebSocket — what one player schedules appears instantly for the others — and a narrative log feed records the campaign's story.",
     tech: ["Java", "Spring Boot", "PostgreSQL", "MongoDB", "React", "Docker"],
     year: "2026",
     links: [{ label: "GitHub", url: "https://github.com/Rhuan-aa/TatakaiManager" }],
@@ -68,6 +73,8 @@ export const projects: Project[] = [
     category: "Web / Front-end",
     description:
       "Álbum gamificado de cartas de amor: cada mensagem fica bloqueada até o destinatário escanear um QR Code, revelando a carta com animação de flip 3D. Painel administrativo, geração automática de QR codes e design mobile-first com estética de scrapbook.",
+    descriptionEn:
+      "Gamified album of love letters: each message stays locked until the recipient scans a QR code, revealing the letter with a 3D flip animation. Includes an admin panel, automatic QR code generation, and a mobile-first design with a scrapbook aesthetic.",
     tech: ["TypeScript", "React", "TanStack Start", "Tailwind CSS"],
     year: "2026",
     links: [{ label: "GitHub", url: "https://github.com/Rhuan-aa/qr-love-album" }],

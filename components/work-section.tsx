@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { cn } from "@/lib/utils"
+import { cn, tx, type Lang } from "@/lib/utils"
 import { featuredProjects, type Project } from "@/lib/projects"
 import { ScrambleTextOnHover } from "@/components/scramble-text"
 import { BitmapChevron } from "@/components/bitmap-chevron"
@@ -11,7 +11,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function WorkSection() {
+const COPY = {
+  pt: {
+    eyebrow: "03 / Projetos",
+    heading: "PROJETOS",
+    intro: "Criações pessoais e acadêmicas — todas com código aberto no GitHub.",
+    allProjects: "Todos os Projetos",
+    projectsHref: "/projetos",
+  },
+  en: {
+    eyebrow: "03 / Projects",
+    heading: "PROJECTS",
+    intro: "Personal and academic builds — all open source on GitHub.",
+    allProjects: "All Projects",
+    projectsHref: "/en/projects",
+  },
+}
+
+export function WorkSection({ lang = "pt" }: { lang?: Lang }) {
+  const c = COPY[lang]
   const sectionRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLDivElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
@@ -61,11 +79,11 @@ export function WorkSection() {
     <section ref={sectionRef} id="projetos" className="relative py-32 pl-6 md:pl-28 pr-6 md:pr-12">
       <div ref={headerRef} className="mb-16 flex items-end justify-between">
         <div>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">03 / Projetos</span>
-          <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">PROJETOS</h2>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">{c.eyebrow}</span>
+          <h2 className="mt-4 font-[var(--font-bebas)] text-5xl md:text-7xl tracking-tight">{c.heading}</h2>
         </div>
         <p className="hidden md:block max-w-xs font-mono text-xs text-muted-foreground text-right leading-relaxed">
-          Criações pessoais e acadêmicas — todas com código aberto no GitHub.
+          {c.intro}
         </p>
       </div>
 
@@ -74,16 +92,16 @@ export function WorkSection() {
         className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[180px] md:auto-rows-[200px]"
       >
         {featuredProjects.map((project, index) => (
-          <WorkCard key={project.title} project={project} index={index} persistHover={index === 0} />
+          <WorkCard key={project.title} project={project} index={index} persistHover={index === 0} lang={lang} />
         ))}
       </div>
 
       <div className="mt-12 flex justify-end">
         <Link
-          href="/projetos"
+          href={c.projectsHref}
           className="group inline-flex items-center gap-3 border border-foreground/20 px-6 py-3 font-mono text-xs uppercase tracking-widest text-foreground hover:border-accent hover:text-accent transition-all duration-200"
         >
-          <ScrambleTextOnHover text="Todos os Projetos" as="span" duration={0.6} />
+          <ScrambleTextOnHover text={c.allProjects} as="span" duration={0.6} />
           <BitmapChevron className="transition-transform duration-[400ms] ease-in-out group-hover:rotate-45" />
         </Link>
       </div>
@@ -95,10 +113,12 @@ function WorkCard({
   project,
   index,
   persistHover = false,
+  lang,
 }: {
   project: Project
   index: number
   persistHover?: boolean
+  lang: Lang
 }) {
   const [isHovered, setIsHovered] = useState(false)
   const cardRef = useRef<HTMLElement>(null)
@@ -140,7 +160,7 @@ function WorkCard({
 
       <div className="relative z-10">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {project.category}
+          {tx(lang, project.category, project.categoryEn)}
         </span>
         <h3
           className={cn(
@@ -159,7 +179,7 @@ function WorkCard({
             isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2",
           )}
         >
-          {project.description}
+          {tx(lang, project.description, project.descriptionEn)}
         </p>
 
         {/* Links do projeto — mini-cards quando há mais de um repo */}
