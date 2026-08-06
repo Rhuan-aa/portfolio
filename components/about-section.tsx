@@ -14,14 +14,14 @@ const COPY = {
     heading: "QUEM SOU",
     stackHeading: "Stack & Competências",
     paragraph:
-      "Atualmente curso Engenharia de Software no IFSP — Campus São Carlos e trabalho como Engenheiro de Software na Newgesti, com foco em desenvolvimento mobile (Flutter/Dart) e soluções fullstack & IoT.",
+      "Atualmente curso Engenharia de Software no IFSP — Campus São Carlos. Já desenvolvi ferramentas offline-first com Node-RED e Flutter, com foco em soluções mobile e IoT.",
   },
   en: {
     eyebrow: "01 / About",
     heading: "WHO I AM",
     stackHeading: "Stack & Skills",
     paragraph:
-      "I'm currently studying Software Engineering at IFSP — São Carlos campus and work as a Software Engineer at Newgesti, focused on mobile development (Flutter/Dart) and fullstack & IoT solutions.",
+      "I'm currently studying Software Engineering at IFSP — São Carlos campus. I've already built offline-first tools with Node-RED and Flutter, focused on mobile and IoT solutions.",
   },
 }
 

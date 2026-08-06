@@ -14,13 +14,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 const COPY = {
   pt: {
-    subtitle: "ENGENHEIRO DE SOFTWARE — FULLSTACK, MOBILE & IOT",
     viewProjects: "Ver Projetos",
     contact: "Contato",
     projectsHref: "/projetos",
   },
   en: {
-    subtitle: "SOFTWARE ENGINEER — FULLSTACK, MOBILE & IOT",
     viewProjects: "View Projects",
     contact: "Contact",
     projectsHref: "/en/projects",
@@ -147,11 +145,7 @@ export function HeroSection({ lang = "pt" }: { lang?: Lang }) {
             phase === "done" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
           )}
         >
-          <h2 className="font-[var(--font-bebas)] text-muted-foreground/60 text-[clamp(1rem,3vw,2rem)] mt-4 tracking-wide">
-            {c.subtitle}
-          </h2>
-
-          <p className="mt-12 max-w-md font-mono text-sm text-muted-foreground leading-relaxed">
+          <p className="mt-8 max-w-md font-mono text-sm text-muted-foreground leading-relaxed">
             {tx(lang, site.bio, site.bioEn)}
           </p>
 
