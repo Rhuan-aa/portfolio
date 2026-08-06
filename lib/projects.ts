@@ -7,6 +7,8 @@ export interface Project {
   title: string
   category: string
   description: string
+  categoryEn?: string
+  descriptionEn?: string
   tech: string[]
   year: string
   /** Links para repositórios/demos — mais de um vira mini-cards no card do projeto */
@@ -22,6 +24,20 @@ export interface Project {
  * e a página /projetos lista todos.
  */
 export const projects: Project[] = [
+  {
+    title: "Atlas",
+    category: "IA / Assistente de Voz",
+    categoryEn: "AI / Voice Assistant",
+    description:
+      "Assistente de voz local para Linux que construí do zero: wake word (\"hey jarvis\" via openWakeWord), transcrição com faster-whisper em pt-BR e síntese de fala com Piper rodando 100% no dispositivo, sem áudio saindo para a nuvem. Desenhei um roteador que resolve comandos fixos localmente (abrir apps, controlar música por MPRIS, enviar mensagens no Telegram, busca na web, mover arquivos para a lixeira com confirmação por voz) e delega o resto — perguntas abertas e ações reais na máquina, como criar e organizar arquivos ou tarefas de múltiplos passos — a um agente com fluxo de aprovação obrigatório para comandos perigosos e fallback em cadeia (provedor na nuvem → modelo local Ollama qwen2.5:7b) para continuar funcionando quando a rede cai. Também construí um quadro colaborativo em tempo real sobre WebSocket dedicado, com objetos de texto, imagem, áudio e modelos 3D, conectores curvos, undo pelo padrão Memento, geração de mídia por IA (imagens com FLUX.1-dev e 3D com TRELLIS via NVIDIA NIM) e um modo Build que transforma um pedido em linguagem natural em um grafo de nós estruturado. Fecha com controle por gestos da câmera usando MediaPipe, processado inteiramente no navegador, e hooks de git que impõem Conventional Commits e bloqueiam vazamento de segredos a cada commit.",
+    descriptionEn:
+      "Local voice assistant for Linux that I built from scratch: wake word (\"hey jarvis\" via openWakeWord), speech-to-text with faster-whisper in pt-BR and speech synthesis with Piper, all running 100% on-device with no audio leaving the machine. I designed a router that handles fixed commands locally (launching apps, music control over MPRIS, Telegram messages, web search, moving files to trash with voice confirmation) and delegates everything else — open-ended questions and real actions on the machine, like creating and organizing files or multi-step tasks — to an agent with a mandatory approval flow for dangerous commands and a fallback chain (cloud provider → local Ollama qwen2.5:7b) so it keeps working when the network drops. I also built a real-time collaborative board over a dedicated WebSocket, with text, image, audio and 3D-model objects, curved connectors, undo via the Memento pattern, AI media generation (images with FLUX.1-dev and 3D with TRELLIS through NVIDIA NIM) and a Build mode that turns a natural-language request into a structured node graph. Rounded off with camera hand-gesture control using MediaPipe, processed entirely in the browser, and git hooks that enforce Conventional Commits and block secret leakage on every commit.",
+    tech: ["Python", "LLM & Agentes", "Ollama", "WebSockets", "faster-whisper", "MediaPipe"],
+    year: "2026",
+    links: [{ label: "GitHub", url: "https://github.com/Rhuan-aa/atlas" }],
+    featured: true,
+    span: "col-span-2 md:col-span-4 row-span-1",
+  },
   {
     title: "CTruco",
     category: "Fullstack / Educacional",
