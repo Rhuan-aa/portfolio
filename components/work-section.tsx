@@ -89,7 +89,7 @@ export function WorkSection({ lang = "pt" }: { lang?: Lang }) {
 
       <div
         ref={gridRef}
-        className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[180px] md:auto-rows-[200px]"
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)] md:auto-rows-[minmax(200px,auto)]"
       >
         {featuredProjects.map((project, index) => (
           <WorkCard key={project.title} project={project} index={index} persistHover={index === 0} lang={lang} />
