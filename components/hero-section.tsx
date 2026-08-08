@@ -145,10 +145,6 @@ export function HeroSection({ lang = "pt" }: { lang?: Lang }) {
             phase === "done" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
           )}
         >
-          <p className="mt-8 max-w-md font-mono text-sm text-muted-foreground leading-relaxed">
-            {tx(lang, site.bio, site.bioEn)}
-          </p>
-
           <div className="mt-16 flex items-center gap-8">
             <Link
               href={c.projectsHref}

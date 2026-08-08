@@ -13,15 +13,11 @@ const COPY = {
     eyebrow: "01 / Sobre",
     heading: "QUEM SOU",
     stackHeading: "Stack & Competências",
-    paragraph:
-      "Atualmente curso Engenharia de Software no IFSP — Campus São Carlos. Já desenvolvi ferramentas offline-first com Node-RED e Flutter, com foco em soluções mobile e IoT.",
   },
   en: {
     eyebrow: "01 / About",
     heading: "WHO I AM",
     stackHeading: "Stack & Skills",
-    paragraph:
-      "I'm currently studying Software Engineering at IFSP — São Carlos campus. I've already built offline-first tools with Node-RED and Flutter, focused on mobile and IoT solutions.",
   },
 }
 
@@ -87,7 +83,6 @@ export function AboutSection({ lang = "pt" }: { lang?: Lang }) {
           <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">
             {tx(lang, site.bio, site.bioEn)}
           </p>
-          <p className="mt-6 font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">{c.paragraph}</p>
         </div>
 
         <div>

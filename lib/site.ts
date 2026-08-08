@@ -10,9 +10,9 @@ export const site = {
   email: "rhuandrey@gmail.com",
   github: "https://github.com/Rhuan-aa",
   linkedin: "https://www.linkedin.com/in/rhuan-aa-boni/",
-  bio: "Estudante do sexto período de Bacharelado em Engenharia de Software no Instituto Federal de São Paulo (IFSP), com experiência em aplicações fullstack e mobile e background de iniciação científica. Escrevo código guiado por testes automatizados e padrões de design, com maior experiência em sistemas com comunicação assíncrona, IoT e arquiteturas offline-first.",
+  bio: "Engenheiro de software e estudante de Bacharelado em Engenharia de Software no IFSP São Carlos. Desenvolvo aplicativos Flutter offline-first com integração de hardware via Bluetooth (BLE/GATT) e dashboards IoT em Node-RED com MQTT. Na iniciação científica construo uma plataforma fullstack em Java/Spring Boot e React, com multiplayer em tempo real por WebSockets e persistência em PostgreSQL e MongoDB. Escrevo código guiado por testes automatizados, Clean Architecture e padrões de projeto.",
   bioEn:
-    "Sixth-semester Software Engineering student at Instituto Federal de São Paulo (IFSP), with experience in fullstack and mobile applications and a background in undergraduate research. I write code driven by automated tests and design patterns, with deeper experience in systems involving asynchronous communication, IoT and offline-first architectures.",
+    "Software engineer and Software Engineering undergraduate at IFSP São Carlos. I build offline-first Flutter apps with hardware integration over Bluetooth (BLE/GATT) and IoT dashboards in Node-RED with MQTT. In my undergraduate research I develop a fullstack platform in Java/Spring Boot and React, with real-time multiplayer over WebSockets and persistence in PostgreSQL and MongoDB. I write code driven by automated tests, Clean Architecture and design patterns.",
   skills: [
     "Java",
     "Spring Boot",
